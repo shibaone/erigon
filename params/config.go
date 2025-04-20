@@ -71,6 +71,7 @@ var (
 	HoodiGenesisHash      = libcommon.HexToHash("0xbbe312868b376a3001692a646dd2d7d1e4406380dfd86b98aa8a34d1557c971b")
 	AmoyGenesisHash       = libcommon.HexToHash("0x7202b2b53c5a0836e773e319d18922cc756dd67432f9a1f65352b61f4406c697")
 	BorMainnetGenesisHash = libcommon.HexToHash("0xa9c28ce2141b56c474f1dc504bee9b01eb1bd7d1a507580d5519d4437a97de1b")
+	ShibariumGenesisHash  = libcommon.HexToHash("")
 	BorDevnetGenesisHash  = libcommon.HexToHash("0x5a06b25b0c6530708ea0b98a3409290e39dce6be7f558493aeb6e4b99a172a87")
 	GnosisGenesisHash     = libcommon.HexToHash("0x4f1dd23188aab3a76b463e4af801b52b1248ef073c648cbdc4c9333d3da79756")
 	ChiadoGenesisHash     = libcommon.HexToHash("0xada44fd8d2ecab8b08f256af07ad3e777f17fb434f8f8e678b312f576212ba9a")
@@ -142,6 +143,8 @@ var (
 	AmoyChainConfig = readChainSpec("chainspecs/amoy.json")
 
 	BorMainnetChainConfig = readChainSpec("chainspecs/bor-mainnet.json")
+
+	ShibariumChainConfig = readChainSpec("chainspecs/shibarium.json")
 
 	BorDevnetChainConfig = readChainSpec("chainspecs/bor-devnet.json")
 
@@ -225,6 +228,8 @@ func ChainConfigByChainName(chain string) *chain.Config {
 		return AmoyChainConfig
 	case networkname.BorMainnet:
 		return BorMainnetChainConfig
+	case networkname.Shibarium:
+		return ShibariumChainConfig
 	case networkname.BorDevnet:
 		return BorDevnetChainConfig
 	case networkname.Gnosis:
@@ -252,6 +257,8 @@ func GenesisHashByChainName(chain string) *libcommon.Hash {
 		return &AmoyGenesisHash
 	case networkname.BorMainnet:
 		return &BorMainnetGenesisHash
+	case networkname.Shibarium:
+		return &ShibariumGenesisHash
 	case networkname.BorDevnet:
 		return &BorDevnetGenesisHash
 	case networkname.Gnosis:
@@ -279,6 +286,8 @@ func ChainConfigByGenesisHash(genesisHash libcommon.Hash) *chain.Config {
 		return AmoyChainConfig
 	case genesisHash == BorMainnetGenesisHash:
 		return BorMainnetChainConfig
+	case genesisHash == ShibariumGenesisHash:
+		return ShibariumChainConfig
 	case genesisHash == BorDevnetGenesisHash:
 		return BorDevnetChainConfig
 	case genesisHash == GnosisGenesisHash:

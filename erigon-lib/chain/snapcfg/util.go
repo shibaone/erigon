@@ -50,8 +50,9 @@ var (
 	Sepolia    = fromToml(snapshothashes.Sepolia)
 	Amoy       = fromToml(snapshothashes.Amoy)
 	BorMainnet = fromToml(snapshothashes.BorMainnet)
-	Gnosis     = fromToml(snapshothashes.Gnosis)
-	Chiado     = fromToml(snapshothashes.Chiado)
+	// Shibarium  = fromToml(snapshothashes.Shibarium)
+	Gnosis = fromToml(snapshothashes.Gnosis)
+	Chiado = fromToml(snapshothashes.Chiado)
 )
 
 type PreverifiedItem struct {
@@ -463,8 +464,9 @@ var knownPreverified = map[string]Preverified{
 	networkname.Sepolia:    Sepolia,
 	networkname.Amoy:       Amoy,
 	networkname.BorMainnet: BorMainnet,
-	networkname.Gnosis:     Gnosis,
-	networkname.Chiado:     Chiado,
+	// networkname.Shibarium:  Shibarium,
+	networkname.Gnosis: Gnosis,
+	networkname.Chiado: Chiado,
 }
 
 func RegisterKnownTypes(networkName string, types []snaptype.Type) {
@@ -541,9 +543,10 @@ var KnownWebseeds = map[string][]string{
 	networkname.Sepolia:    webseedsParse(webseed.Sepolia),
 	networkname.Amoy:       webseedsParse(webseed.Amoy),
 	networkname.BorMainnet: webseedsParse(webseed.BorMainnet),
-	networkname.Gnosis:     webseedsParse(webseed.Gnosis),
-	networkname.Chiado:     webseedsParse(webseed.Chiado),
-	networkname.Holesky:    webseedsParse(webseed.Holesky),
+	// networkname.Shibarium:  webseedsParse(webseed.Shibarium),
+	networkname.Gnosis:  webseedsParse(webseed.Gnosis),
+	networkname.Chiado:  webseedsParse(webseed.Chiado),
+	networkname.Holesky: webseedsParse(webseed.Holesky),
 }
 
 func webseedsParse(in []byte) (res []string) {
@@ -570,6 +573,7 @@ func LoadRemotePreverified(ctx context.Context) (loaded bool, err error) {
 	Sepolia = fromToml(snapshothashes.Sepolia)
 	Amoy = fromToml(snapshothashes.Amoy)
 	BorMainnet = fromToml(snapshothashes.BorMainnet)
+	// Shibarium = fromToml(snapshothashes.Shibarium)
 	Gnosis = fromToml(snapshothashes.Gnosis)
 	Chiado = fromToml(snapshothashes.Chiado)
 	// Update the known preverified hashes
@@ -578,9 +582,10 @@ func LoadRemotePreverified(ctx context.Context) (loaded bool, err error) {
 		networkname.Sepolia:    webseedsParse(webseed.Sepolia),
 		networkname.Amoy:       webseedsParse(webseed.Amoy),
 		networkname.BorMainnet: webseedsParse(webseed.BorMainnet),
-		networkname.Gnosis:     webseedsParse(webseed.Gnosis),
-		networkname.Chiado:     webseedsParse(webseed.Chiado),
-		networkname.Holesky:    webseedsParse(webseed.Holesky),
+		// networkname.Shibarium:  webseedsParse(webseed.Shibarium),
+		networkname.Gnosis:  webseedsParse(webseed.Gnosis),
+		networkname.Chiado:  webseedsParse(webseed.Chiado),
+		networkname.Holesky: webseedsParse(webseed.Holesky),
 	}
 
 	knownPreverified = map[string]Preverified{
@@ -589,8 +594,9 @@ func LoadRemotePreverified(ctx context.Context) (loaded bool, err error) {
 		networkname.Sepolia:    Sepolia,
 		networkname.Amoy:       Amoy,
 		networkname.BorMainnet: BorMainnet,
-		networkname.Gnosis:     Gnosis,
-		networkname.Chiado:     Chiado,
+		// networkname.Shibarium:  Shibarium,
+		networkname.Gnosis: Gnosis,
+		networkname.Chiado: Chiado,
 	}
 	return loaded, nil
 }
@@ -614,6 +620,8 @@ func GetToml(networkName string) []byte {
 		return snapshothashes.Amoy
 	case networkname.BorMainnet:
 		return snapshothashes.BorMainnet
+	// case networkname.Shibarium:
+	// 	return snapshothashes.Shibarium
 	case networkname.Gnosis:
 		return snapshothashes.Gnosis
 	case networkname.Chiado:

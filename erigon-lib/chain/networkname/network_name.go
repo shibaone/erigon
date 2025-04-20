@@ -24,6 +24,7 @@ const (
 	Dev                 = "dev"
 	Amoy                = "amoy"
 	BorMainnet          = "bor-mainnet"
+	Shibarium           = "shibarium"
 	BorDevnet           = "bor-devnet"
 	Gnosis              = "gnosis"
 	BorE2ETestChain2Val = "bor-e2e-test-2Val"
@@ -38,6 +39,7 @@ var All = []string{
 	Hoodi,
 	Amoy,
 	BorMainnet,
+	Shibarium,
 	BorDevnet,
 	Gnosis,
 	Chiado,
