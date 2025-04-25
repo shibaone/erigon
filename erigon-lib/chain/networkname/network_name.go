@@ -25,6 +25,7 @@ const (
 	Amoy                = "amoy"
 	BorMainnet          = "bor-mainnet"
 	Shibarium           = "shibarium"
+	Puppynet            = "puppynet"
 	BorDevnet           = "bor-devnet"
 	Gnosis              = "gnosis"
 	BorE2ETestChain2Val = "bor-e2e-test-2Val"
@@ -40,6 +41,7 @@ var All = []string{
 	Amoy,
 	BorMainnet,
 	Shibarium,
+	Puppynet,
 	BorDevnet,
 	Gnosis,
 	Chiado,

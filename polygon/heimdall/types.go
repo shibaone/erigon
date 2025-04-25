@@ -56,6 +56,7 @@ func initTypes() {
 	snapcfg.RegisterKnownTypes(networkname.Amoy, borTypes)
 	snapcfg.RegisterKnownTypes(networkname.BorMainnet, borTypes)
 	snapcfg.RegisterKnownTypes(networkname.Shibarium, borTypes)
+	snapcfg.RegisterKnownTypes(networkname.Puppynet, borTypes)
 }
 
 var Enums = struct {

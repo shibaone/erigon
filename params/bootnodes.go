@@ -56,6 +56,8 @@ var ShibariumBootnodes = []string{
 	"enode://bea4a66245af1ca7c089f13343b0bc816555cf4dbd2660898dcd318163298ee3f99f2ce4c4da31ac2c0e52648128c661f0f089f7f750d5b50aac9fd49465a334@89.43.196.18:30303",
 }
 
+var PuppynetBootnodes = []string{}
+
 // HoleskyBootnodes are the enode URLs of the P2P bootstrap nodes running on the
 // Holesky test network.
 var HoleskyBootnodes = []string{
@@ -189,6 +191,8 @@ func BootnodeURLsOfChain(chain string) []string {
 		return BorMainnetBootnodes
 	case networkname.Shibarium:
 		return ShibariumBootnodes
+	case networkname.Puppynet:
+		return PuppynetBootnodes
 	case networkname.Gnosis:
 		return GnosisBootnodes
 	case networkname.Chiado:

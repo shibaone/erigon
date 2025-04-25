@@ -99,6 +99,8 @@ func NewNodConfigUrfave(ctx *cli.Context, logger log.Logger) (*nodecfg.Config, e
 		logger.Info("Starting Erigon on Bor Mainnet...")
 	case networkname.Shibarium:
 		logger.Info("Starting Erigon on Bor Shibarium...")
+	case networkname.Puppynet:
+		logger.Info("Starting Erigon on Bor Puppynet...")
 	case networkname.BorDevnet:
 		logger.Info("Starting Erigon on Bor Devnet...")
 	case networkname.Gnosis:

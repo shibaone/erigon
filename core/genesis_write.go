@@ -378,6 +378,19 @@ func ShibariumGenesisBlock() *types.Genesis {
 	}
 }
 
+func PuppynetGenesisBlock() *types.Genesis {
+	return &types.Genesis{
+		Config:     params.PuppynetChainConfig,
+		Nonce:      0,
+		Timestamp:  1558348305,
+		GasLimit:   10000000,
+		Difficulty: big.NewInt(1),
+		Mixhash:    libcommon.HexToHash("0x0000000000000000000000000000000000000000000000000000000000000000"),
+		Coinbase:   libcommon.HexToAddress("0x0000000000000000000000000000000000000000"),
+		Alloc:      readPrealloc("allocs/puppynet.json"),
+	}
+}
+
 func BorDevnetGenesisBlock() *types.Genesis {
 	return &types.Genesis{
 		Config:     params.BorDevnetChainConfig,
@@ -662,6 +675,8 @@ func GenesisBlockByChainName(chain string) *types.Genesis {
 		return BorMainnetGenesisBlock()
 	case networkname.Shibarium:
 		return ShibariumGenesisBlock()
+	case networkname.Puppynet:
+		return PuppynetGenesisBlock()
 	case networkname.BorDevnet:
 		return BorDevnetGenesisBlock()
 	case networkname.Gnosis:

@@ -108,6 +108,8 @@ func DataDirForNetwork(datadir string, network string) string {
 		return networkDataDirCheckingLegacy(datadir, "bor-mainnet")
 	case networkname.Shibarium:
 		return networkDataDirCheckingLegacy(datadir, "shibarium")
+	case networkname.Puppynet:
+		return networkDataDirCheckingLegacy(datadir, "puppynet")
 	case networkname.BorDevnet:
 		return networkDataDirCheckingLegacy(datadir, "bor-devnet")
 	case networkname.Sepolia:
