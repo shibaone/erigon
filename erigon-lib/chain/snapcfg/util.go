@@ -20,10 +20,12 @@ import (
 var (
 	Mainnet = fromToml(snapshothashes.Mainnet)
 	// Holesky    = fromToml(snapshothashes.Holesky)
-	Sepolia    = fromToml(snapshothashes.Sepolia)
-	Goerli     = fromToml(snapshothashes.Goerli)
-	Mumbai     = fromToml(snapshothashes.Mumbai)
-	Amoy       = fromToml(snapshothashes.Amoy)
+	Sepolia = fromToml(snapshothashes.Sepolia)
+	Goerli  = fromToml(snapshothashes.Goerli)
+	Mumbai  = fromToml(snapshothashes.Mumbai)
+	Amoy    = fromToml(snapshothashes.Amoy)
+	// Shibarium  = fromToml(snapshothashes.Shibarium)
+	// Puppynet   = fromToml(snapshothashes.Puppynet)
 	BorMainnet = fromToml(snapshothashes.BorMainnet)
 	Gnosis     = fromToml(snapshothashes.Gnosis)
 	Chiado     = fromToml(snapshothashes.Chiado)
@@ -328,10 +330,12 @@ func (c Cfg) MergeLimit(t snaptype.Enum, fromBlock uint64) uint64 {
 var knownPreverified = map[string]Preverified{
 	networkname.MainnetChainName: Mainnet,
 	// networkname.HoleskyChainName:    HoleskyChainSnapshotCfg,
-	networkname.SepoliaChainName:    Sepolia,
-	networkname.GoerliChainName:     Goerli,
-	networkname.MumbaiChainName:     Mumbai,
-	networkname.AmoyChainName:       Amoy,
+	networkname.SepoliaChainName: Sepolia,
+	networkname.GoerliChainName:  Goerli,
+	networkname.MumbaiChainName:  Mumbai,
+	networkname.AmoyChainName:    Amoy,
+	// networkname.Shibarium:           Shibarium,
+	// networkname.Puppynet:            Puppynet,
 	networkname.BorMainnetChainName: BorMainnet,
 	networkname.GnosisChainName:     Gnosis,
 	networkname.ChiadoChainName:     Chiado,
@@ -402,11 +406,13 @@ func VersionedCfg(networkName string, preferred snaptype.Version, min snaptype.V
 }
 
 var KnownWebseeds = map[string][]string{
-	networkname.MainnetChainName:    webseedsParse(webseed.Mainnet),
-	networkname.SepoliaChainName:    webseedsParse(webseed.Sepolia),
-	networkname.GoerliChainName:     webseedsParse(webseed.Goerli),
-	networkname.MumbaiChainName:     webseedsParse(webseed.Mumbai),
-	networkname.AmoyChainName:       webseedsParse(webseed.Amoy),
+	networkname.MainnetChainName: webseedsParse(webseed.Mainnet),
+	networkname.SepoliaChainName: webseedsParse(webseed.Sepolia),
+	networkname.GoerliChainName:  webseedsParse(webseed.Goerli),
+	networkname.MumbaiChainName:  webseedsParse(webseed.Mumbai),
+	networkname.AmoyChainName:    webseedsParse(webseed.Amoy),
+	// networkname.Shibarium:           webseedsParse(webseed.Shibarium),
+	// networkname.Puppynet:            webseedsParse(webseed.Puppynet),
 	networkname.BorMainnetChainName: webseedsParse(webseed.BorMainnet),
 	networkname.GnosisChainName:     webseedsParse(webseed.Gnosis),
 	networkname.ChiadoChainName:     webseedsParse(webseed.Chiado),

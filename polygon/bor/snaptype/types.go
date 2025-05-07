@@ -35,6 +35,8 @@ func init() {
 
 	snapcfg.RegisterKnownTypes(networkname.MumbaiChainName, borTypes)
 	snapcfg.RegisterKnownTypes(networkname.AmoyChainName, borTypes)
+	snapcfg.RegisterKnownTypes(networkname.Shibarium, borTypes)
+	snapcfg.RegisterKnownTypes(networkname.Puppynet, borTypes)
 	snapcfg.RegisterKnownTypes(networkname.BorMainnetChainName, borTypes)
 }
 

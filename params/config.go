@@ -68,6 +68,8 @@ var (
 	GoerliGenesisHash     = libcommon.HexToHash("0xbf7e331f7f7c1dd2e05159666b3bf8bc7a8a3a9eb1d518969eab529dd9b88c1a")
 	MumbaiGenesisHash     = libcommon.HexToHash("0x7b66506a9ebdbf30d32b43c5f15a3b1216269a1ec3a75aa3182b86176a2b1ca7")
 	AmoyGenesisHash       = libcommon.HexToHash("0x7202b2b53c5a0836e773e319d18922cc756dd67432f9a1f65352b61f4406c697")
+	ShibariumGenesisHash  = libcommon.HexToHash("0x80c9851317f242906f0d5d42038029fbdbe7df64e700bdc8b8eaabcc349969f4")
+	PuppynetGenesisHash   = libcommon.HexToHash("0x5be2e21ae365a45dc256f34acb11953a5dca432730d325f0d084775be8dfcd0f")
 	BorMainnetGenesisHash = libcommon.HexToHash("0xa9c28ce2141b56c474f1dc504bee9b01eb1bd7d1a507580d5519d4437a97de1b")
 	BorDevnetGenesisHash  = libcommon.HexToHash("0x5a06b25b0c6530708ea0b98a3409290e39dce6be7f558493aeb6e4b99a172a87")
 	GnosisGenesisHash     = libcommon.HexToHash("0x4f1dd23188aab3a76b463e4af801b52b1248ef073c648cbdc4c9333d3da79756")
@@ -137,6 +139,10 @@ var (
 	MumbaiChainConfig = readChainSpec("chainspecs/mumbai.json")
 
 	AmoyChainConfig = readChainSpec("chainspecs/amoy.json")
+
+	ShibariumChainConfig = readChainSpec("chainspecs/shibarium.json")
+
+	PuppynetChainConfig = readChainSpec("chainspecs/puppynet.json")
 
 	BorMainnetChainConfig = readChainSpec("chainspecs/bor-mainnet.json")
 
@@ -222,6 +228,10 @@ func ChainConfigByChainName(chain string) *chain.Config {
 		return MumbaiChainConfig
 	case networkname.AmoyChainName:
 		return AmoyChainConfig
+	case networkname.Shibarium:
+		return ShibariumChainConfig
+	case networkname.Puppynet:
+		return PuppynetChainConfig
 	case networkname.BorMainnetChainName:
 		return BorMainnetChainConfig
 	case networkname.BorDevnetChainName:
@@ -249,6 +259,10 @@ func GenesisHashByChainName(chain string) *libcommon.Hash {
 		return &MumbaiGenesisHash
 	case networkname.AmoyChainName:
 		return &AmoyGenesisHash
+	case networkname.Shibarium:
+		return &ShibariumGenesisHash
+	case networkname.Puppynet:
+		return &PuppynetGenesisHash
 	case networkname.BorMainnetChainName:
 		return &BorMainnetGenesisHash
 	case networkname.BorDevnetChainName:
@@ -276,6 +290,10 @@ func ChainConfigByGenesisHash(genesisHash libcommon.Hash) *chain.Config {
 		return MumbaiChainConfig
 	case genesisHash == AmoyGenesisHash:
 		return AmoyChainConfig
+	case genesisHash == ShibariumGenesisHash:
+		return ShibariumChainConfig
+	case genesisHash == PuppynetGenesisHash:
+		return PuppynetChainConfig
 	case genesisHash == BorMainnetGenesisHash:
 		return BorMainnetChainConfig
 	case genesisHash == BorDevnetGenesisHash:
